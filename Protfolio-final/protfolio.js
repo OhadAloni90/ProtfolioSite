@@ -37,3 +37,18 @@ scrollBtn.addEventListener("click", ()=> {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop=0;
 })
+
+window.addEventListener("scroll", revealss);
+
+function revealss () {
+    var revealsi = document.querySelectorAll(".reveal");
+    for(var i=0; i < revealsi.length; i++){
+        var windowHeight = window.innerHeight;
+        console.log(windowHeight);
+        var revealTop = revealsi[i].getBoundingClientRect().top;
+        var revealPoint = 50;
+        if(revealTop < (windowHeight - revealPoint)){
+            revealsi[i].classList.add("active");
+        }
+    }   revealsi[i].classList.remove("reveal");
+}
